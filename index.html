@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <title></title>
+      <script type="text/javascript">
+      function validate(){
+            var uname = document.frm.username.value;
+            
+            var pass = document.frm.pwd.value;
+           
+            if (uname == "") {
+                  window.alert("Please Enter Username."); 
+                  uname.focus(); 
+                  return false;
+            }
+           
+            if (pass == "") {
+                  window.alert("Please Enter Your Password."); 
+                  pass.focus(); 
+                  return false;
+            }
+            var x = pass;
+            if(x.match(/[a-z]/g) && x.match(/[A-Z]/g) && x.match(/[0-9]/g) && x.match(/[^a-zA-Z0-9\d]/g) && x.length >= 8){
+                  
+                  //return true;
+            }else{
+                  window.alert("Password Only Contains Simple Letters, Capital Letters, Digits and Specil Characteristics and Password Must be Contains 8 Digits"); 
+                  pass.focus(); 
+                  return false;
+            }
+           
+
+            return true;
+      }
+</script>
+</head>
+
+<body><center>
+<h2><b><i>LOGIN FORM</i></b></h2>
+<form name="frm" action="" onsubmit="return validate()" method="post">
+      Username: <input type="text" name="username"><br> <br>
+      
+      Password: <input type="password" name="pwd"><br> <br>
+     
+
+      <input type="submit" name="btn" value="submit">
+
+</form></center>
+
+</body>
+</html>
